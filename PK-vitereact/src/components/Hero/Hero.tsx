@@ -6,6 +6,29 @@ const Hero: React.FC = () => {
   const [typedText, setTypedText] = useState('');
   const [moonPosition, setMoonPosition] = useState(0);
 
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import './styles/hero.css';
+
+const Hero: React.FC = () => {
+  // ... (same as above)
+  return (
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      {/* Gradient Background */}
+      <div className="hero__background absolute inset-0" />
+
+      {/* Moon */}
+      <div className="moon" />
+
+      {/* Hero Content */}
+      <div className="z-20 text-center px-6">
+        {/* ... */}
+      </div>
+    </section>
+  );
+};
+
+  
   // Typewriter effect for title
   useEffect(() => {
     const fullText = "AI Content Developer & Creative Technologist";
