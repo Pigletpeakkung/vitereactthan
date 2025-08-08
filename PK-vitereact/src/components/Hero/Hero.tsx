@@ -28,7 +28,25 @@ const Hero: React.FC = () => {
   );
 };
 
-  
+  useEffect(() => {
+  const moon = document.querySelector('.moon');
+  if (!moon) return;
+
+  const scrollTween = gsap.to(moon, {
+    y: -200, // Move moon up as you scroll down
+    x: 100,  // Move moon right as you scroll
+    ease: 'none',
+    scrollTrigger: {
+      trigger: document.body,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+    },
+  });
+
+  return () => scrollTrigger.kill();
+}, []);
+
   // Typewriter effect for title
   useEffect(() => {
     const fullText = "AI Content Developer & Creative Technologist";
