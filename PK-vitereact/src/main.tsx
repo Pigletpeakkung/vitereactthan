@@ -8,3 +8,9 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>,
 )
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+import { gsap } from 'gsap';
+
+createRoot(document.getElementById('root')!).render(<App />);
